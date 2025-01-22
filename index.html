@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Colors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: white;
+            color: black;
+        }
+        .name-display {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ismingizni kiriting</h1>
+    <input type="text" id="nameInput" placeholder="Sizning ismingiz">
+    <button onclick="changeColors()">Отправить</button>
+    <div id="nameDisplay" class="name-display"></div>
+
+    <script>
+        function changeColors() {
+            const nameInput = document.getElementById('nameInput');
+            const nameDisplay = document.getElementById('nameDisplay');
+
+            const name = nameInput.value;
+            if (name.trim() === '') {
+                alert('Iltimos ismingizni kiriting!');
+                return;
+            }
+
+            document.body.style.backgroundColor = 'blue';
+            nameDisplay.style.color = 'yellow';
+            nameDisplay.textContent = ` ${name}`;
+        }
+    </script>
+</body>
+</html>
